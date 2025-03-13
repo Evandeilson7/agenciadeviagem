@@ -1,0 +1,111 @@
+/* Estilo base para o corpo */
+body {
+  background-image: url('imagens/p3.jpg');
+  background-size: cover; /* Faz a imagem cobrir toda a tela */
+  background-position: center; /* Centraliza a imagem */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Permite que o header e main fiquem em coluna */
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Menu de navegação fixo */
+header {
+  width: 100%;
+  position: fixed; /* Fixa o menu no topo */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.85); /* Fundo mais opaco para melhor legibilidade */
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu li {
+  margin: 0 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.menu a:hover {
+  color: #ff6f61;
+  transform: scale(1.1); /* Efeito de leve aumento ao passar o mouse */
+}
+
+/* Contêiner principal */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsivo para diferentes tamanhos */
+  gap: 20px;
+  padding: 100px 20px 20px; /* Espaço para o menu fixo */
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Estilo dos cartões */
+.cartao {
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cartao:hover {
+  transform: translateY(-8px) scale(1.02); /* Efeito mais sutil */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cartao img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.cartao h1 {
+  margin: 10px 0;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.cartao p {
+  margin: 10px 0;
+  color: #555;
+  font-size: 1em;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu li {
+    margin: 5px;
+  }
+
+  .container {
+    padding-top: 120px; /* Mais espaço para o menu em telas pequenas */
+    grid-template-columns: 1fr; /* Apenas uma coluna */
+  }
+}
